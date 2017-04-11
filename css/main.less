@@ -18,7 +18,17 @@ body {
     -webkit-user-select: none;
     background: #000 url(../img/background.jpg) no-repeat center;    
     font-size: 16px; 
-    font-family: 'Droid Sans', sans-serif
+    font-family: 'Droid Sans', sans-serif;
+    animation: bg 35s linear infinite alternate;
+}
+
+@keyframes bg{
+	0%{
+		background-position: 0% 0%;
+	}
+	100%{
+		background-position: 100% 100%;
+	}
 }
 
 #page{
