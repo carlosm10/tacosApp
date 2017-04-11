@@ -64,7 +64,8 @@ function onDeviceReady(){
 		getPicture({
 			config: config,
 			onSuccess: function(imageData){
-				$avatar.find(".avatar-img").attr("src", "data:image/jpeg;base64," + imageData);
+				var img = "data:image/jpeg;base64," + imageData;
+				$avatar.find(".avatar-img").attr("src", img);
 				firebase.database().ref('usuarios/' + idfb).update({
 					"foto": img
 				});
