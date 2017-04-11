@@ -57,11 +57,11 @@ function onDeviceReady(){
 	});
 
 	function onOffline(){
-		$("#estatus").text("offline");
+		$("#status").text("offline");
 	}	
 
 	function onOnline(){
-		$("#estatus").text("online");
+		$("#status").text("online");
 	}
 
 	function getPicture(d){
