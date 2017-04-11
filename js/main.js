@@ -1,3 +1,21 @@
+$(function() {
+	var tacosDB = firebase.database().ref('/usuarios');
+
+	tacosDB.on('value', function(data){
+		console.log("value", data.key, data.val());
+		var usuarios = data.val();
+		$.get("views/_tbTacos.html", function(template){
+			$("#rolTable-content").handlebars(template, usuarios);
+		})
+		
+	});
+
+	tacosDB.on("child_changed", function(data){
+		console.log("child_changed", data.key, data.val());
+	});
+});
+
+
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady(){
